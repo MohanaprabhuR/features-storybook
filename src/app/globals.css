@@ -25,3 +25,31 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.btn-primary {
+  @apply bg-[#0E8066] text-white leading-6  rounded-full p-8;
+}
+
+.btn-secondary {
+  @apply bg-white text-base text-[#1E1E1C] leading-6 py-1.5 px-6 border-2 border-[#1E1E1C] rounded-full font-bold;
+}
+
+.btn-show-icon {
+  @apply bg-[#0E8066] text-sm text-white leading-6 py-2 px-6 rounded-full flex items-center justify-center;
+}
+
+.btn-small {
+  @apply text-xs px-2.5 py-4;
+}
+
+.btn-medium {
+  @apply text-sm px-4 py-5;
+}
+
+.btn-large {
+  @apply text-base px-6 py-6;
+}
+
+.btn-red {
+  @apply bg-red-500;
+}

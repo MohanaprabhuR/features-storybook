@@ -11,14 +11,14 @@ export default meta;
 export const Primary = {
   args: {
     label: 'share list',
-    size: 'default',
-    variant: 'default'
+    size: 'Small',
+    variant: 'Default'
   },
   argTypes: {
     label: {
       defaultValue: "Contact Us"
     },
-    customIcon: {
+    CustomIcon: {
       table: {
         disable: true
       }
@@ -33,10 +33,10 @@ export const Primary = {
 
 export const ButtonIcon = {
   args: {
-    label: 'share',
-    size: 'default',
-    variant: 'default',
-    iconPlacement: 'left',
+    label: 'share list',
+    size: 'Small',
+    variant: 'Default',
+    iconPlacement: 'Left'
   },
   argTypes: {
     label: {

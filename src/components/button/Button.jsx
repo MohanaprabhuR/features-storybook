@@ -8,37 +8,31 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-green-700 text-primary-foreground hover:bg-primary/90 text-white",
-        outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground text-black",
-        rounded: "bg-green-700 rounded-full hover:bg-accent hover:text-accent-foreground text-white",
+        Default: "bg-green-200 text-primary-foreground hover:bg-primary/90 text-white rounded-full	items-center",
+        Outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground text-black rounded-full	items-center",
       },
       size: {
-        default: "h-10 px-9 py-3",
-        sm: "h-9 px-6",
-        lg: "h-10 px-9 py-3",
+        Small: "px-6 py-2 text-sm	leading-relaxed	font-medium",
+        Medium: "px-9 py-3 text-lg	leading-snug",
+        Large: " px-9 py-3  w-full text-lg	leading-snug",
       },
       iconPlacement: {
-        left: "flex-row",
-        right: "flex-row-reverse"
+        Left: "flex-row",
+        Right: "flex-row-reverse"
       }
     },
-    // defaultVariants: {
-    //   variant: "default",
-    //   size: "lg", 
-    //   iconPlacement: "left",
-    // },
   }
 );
 
-const Button = ({ size, variant, label, customIcon, iconPlacement }) => {
-  const iconPositionClass = iconPlacement === 'right' ? 'right' : 'left';
-  const iconDisplay = customIcon ? "inline-block" : "none";
+const Button = ({ size, variant, label, CustomIcon, iconPlacement }) => {
+  const iconPositionClass = iconPlacement === 'Right' ? 'Right' : 'Left';
+  const iconDisplay = CustomIcon ? "inline-block" : "none";
   
   return (
     <button className={cn(buttonVariants({ size, variant, iconPlacement }))}>
-      {customIcon && (
-        <span className={`w-4 h-4 ${iconDisplay} ${iconPositionClass === 'right' ? 'ml-2' : 'mr-2'}`}>
-          <img src={customIcon} alt="Icon" />
+      {CustomIcon && (
+        <span className={`w-4 h-4 d-flex items-center	 ${iconDisplay} ${iconPositionClass === 'Right' ? 'ml-2' : 'mr-2'}`}>
+          <img src={CustomIcon} alt="Icon" />
         </span>
       )}
       {label}
@@ -48,11 +42,11 @@ const Button = ({ size, variant, label, customIcon, iconPlacement }) => {
 
 // PropTypes for Button component
 Button.propTypes = {
-  size: PropTypes.oneOf(['default', 'sm', 'lg']),
-  variant: PropTypes.oneOf(['default','outline','rounded']),
-  iconPlacement: PropTypes.oneOf(['left','right']),
+  size: PropTypes.oneOf(['Small', 'Medium', 'Large']),
+  variant: PropTypes.oneOf(['Default','Outline']),
+  iconPlacement: PropTypes.oneOf(['Left','Right']),
   label: PropTypes.string.isRequired,
-  customIcon: PropTypes.string, 
+  CustomIcon: PropTypes.string, 
 };
 
 export default Button;
